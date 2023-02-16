@@ -1,0 +1,8 @@
+var urlencode = require('urlencode');
+var json = require('json-middleware');
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart();
+
+app.use(json);
+app.use(urlencode);
+app.use('/url/that/accepts/form-data', multipartMiddleware);
